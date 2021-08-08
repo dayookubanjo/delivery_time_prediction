@@ -1,0 +1,305 @@
+#header-container {
+    background-color: rgb(74, 178, 212);
+    max-width: 95%;
+	min-height: 50px;
+    margin:auto;
+    display: grid;
+	justify-items: center;
+	align-items: center;
+}
+
+#header-container h1 {
+    color: black;
+    font-size: 40px;
+}
+
+#index-section-1 {
+    background-color: rgb(211, 211, 211, 0.4);
+    max-width: 95%;
+	min-height: 50px;
+    margin:auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+	justify-items: end;
+    align-items: center;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#index-section-1 div{
+    margin: 5px;
+    padding: 10px;
+
+}
+
+#index-section-1 img{
+    max-width: 78%;
+    margin: 10px;
+    margin-right: 50px;
+    
+ 
+    
+
+}
+
+#index-section-2 {
+    background-color: rgb(211, 211, 211, 0.4);
+    max-width: 95%;
+	min-height: 50px;
+    margin:auto;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+	justify-items: start;
+	align-items: center;
+
+}
+
+#index-section-2 img{
+    max-width: 80%;
+    margin: 10px;
+    margin-right: 50px;
+    
+    align-self: center;
+    justify-self: end;
+
+    
+
+}
+
+#index-section-2 div{
+    margin: 5px;
+    padding: 10px;
+
+
+}
+
+#index-section-2 div form input{
+    width: 100%; 
+    height: 18px;
+     
+    margin: 7px;
+     
+}
+
+#index-section-2 div form label{
+    font-weight: bold;
+    margin: 7px;
+    color: green;
+    font-size: 20px;
+}
+
+#index-section-2 div form button{
+    
+    
+    padding: 10px;
+    background-color:rgb(74, 178, 212);
+     /* rgba(18, 122, 219, 0.7); */
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: black;
+    text-align: center;
+    margin: 7px;
+}
+
+#footer-container{
+    max-width: 95%;
+    min-height: 50px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+
+     
+    background-color: rgb(74, 178, 212);
+    
+}
+.footer-grid1{
+max-width: 100%;
+margin: auto;
+}
+
+
+#footer-container div span{
+font-size: 15px;
+
+
+    
+}
+
+#footer-container div span a{
+    font-size: 18px;
+    
+    color: black;
+    font-weight: bolder;
+        
+    }
+
+/* Responsive Design*/
+/* Tablets */
+
+@media (min-width: 501px) and (max-width: 768px) {
+
+    #index-section-1 img{
+        display: none;
+    }
+
+    #index-section-2 img{
+        display: none;
+    }
+
+    #index-section-1 {
+
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+    #index-section-2 {
+
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+
+    #header-container h1{
+        font-size: 20px;
+    
+    }
+
+    #index-section-1 div h1{
+        font-size: 20px;
+    
+    }
+
+    #index-section-1 div h3{
+        font-size: 15px;
+    
+    }
+
+    #index-section-2 div h1{
+        font-size: 20px;
+    
+    }
+
+    #index-section-2 div form input{
+        width: 90%; 
+        height: 15px;
+         
+        margin: 5px;
+         
+    }
+    
+    #index-section-2 div form label{
+        font-weight: bold;
+        margin: 7px;
+        color: green;
+        font-size: 12px;
+    }
+
+    #index-section-2 div form button{
+    
+    
+        padding: 5px;
+ 
+        font-size: 15px;
+ 
+    }
+    
+ 
+    
+    
+
+    
+    #footer-container div span a{
+        font-size: 10px;
+        
+        color: black;
+        font-weight: bolder;
+            
+        }
+
+}
+
+@media (max-width: 500px) {
+
+    #index-section-1 img{
+        display: none;
+    }
+
+    #index-section-2 img{
+        display: none;
+    }
+
+    #index-section-1 {
+
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+    #index-section-2 {
+
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+
+    #header-container h1{
+        font-size: 20px;
+    
+    }
+
+    #header-container img{
+        max-width: 100%;
+    
+    }
+    #index-section-1 div h1{
+        font-size: 20px;
+    
+    }
+
+    #index-section-1 div h3{
+        font-size: 15px;
+    
+    }
+
+    #index-section-2 div h1{
+        font-size: 20px;
+    
+    }
+
+    #index-section-2 div form input{
+        width: 90%; 
+        height: 15px;
+         
+        margin: 5px;
+         
+    }
+    
+    #index-section-2 div form label{
+        font-weight: bold;
+        margin: 7px;
+        color: green;
+        font-size: 12px;
+    }
+
+    #index-section-2 div form button{
+    
+    
+        padding: 5px;
+ 
+        font-size: 15px;
+ 
+    }
+    
+ 
+    
+    
+
+    
+    #footer-container div span a{
+        font-size: 10px;
+        
+        color: black;
+        font-weight: bolder;
+            
+        }
+
+}

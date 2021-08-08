@@ -1,0 +1,102 @@
+{% load static  %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainsite/css/style.css' %}">
+    <title>Delivery Time Prediction</title>
+</head>
+<body>
+    <header>
+        <div id="header-container">
+            <img src="{% static 'mainsite/images/adedayo_okubanjo.png' %}" alt="">
+        </div>
+        
+    </header>
+
+    <section id= "index-section-1">
+        <div>
+            <h1>Delivery Time Prediction (Logistics Company)</h1>
+            <h3> Problem Statement: A logistics company based in Lagos, Nigeria has been experiencing consistent delays in customer deliveries due to the increase in traffic in the state. This has caused the company's customer satisfaction score to decline drastically.
+
+            </h3>  
+            <h3> To solve this problem, i have developed a machine learning model to accurately predict and inform the customer on how long it will take in minutes for a rider to deliver a package using the pickup monthday, pickup weekday, pickup time (hour, minute and second), temperature in degree celsius, precipitation in milimeters, pickup location (latitude and longitude) and delivery location (latitude and longitude.
+            </h3> 
+
+            <h3>
+                Click <a href="https://www.kaggle.com/dayookubanjo/delivery-time-prediction-logistic-company">here</a> to view the codebase for the regression machine learning models developed using Python.
+            </h3>
+        </div>  
+        
+        <img src="{% static 'mainsite/images/delivery_bike.png' %}" alt="">
+          
+    </section> 
+
+    <section  id= "index-section-2">
+          
+            
+            
+        <div>
+            <h1>Test the model below:</h1>
+            {% if messages %}
+                {% for item in messages %}
+                    <h3 style="color:red;font-weight:bold">{{item}}</h3>
+                {% endfor %}
+            {% endif %}
+ 
+            <form action="{% url 'predict' %}" method="POST">
+                {% csrf_token %}
+                <label for="pickup_monthday">Pickup MonthDay (1 - 31):</label>
+                <input type="number" min="1" max="31" name="pickup_monthday"><br> 
+                    
+                <label for="pickup_weekday">Pickup WeekDay (1 - 7):</label>
+                <input type="number" min="1" max="31" name="pickup_weekday"><br> 
+ 
+                <label for="temperature">Atmospheric Temperature (Celsius):</label>
+                <input type="number" step="any" name="temperature"><br> 
+
+                <label for="precipitation">Precipitation (Millimeters):</label>
+                <input type="number" step="any" name="precipitation"><br>   
+
+                <label for="pickup_latitude">Pickup Location (Latitude):</label>
+                <input type="number" step="any" name="pickup_latitude"><br> 
+
+                <label for="pickup_longitude">Pickup Location (Longitude):</label>
+                <input type="number" step="any" name="pickup_longitude"><br> 
+
+                <label for="destination_latitude">Delivery Location (Latitude):</label>
+                <input type="number" step="any" name="destination_latitude"><br> 
+
+                <label for="destination_longitude">Delivery Location (Longitude):</label>
+                <input type="number" step="any" name="destination_longitude"><br> 
+
+                <label for="pickup_hour">Pickup Time (Hour: 0 - 23):</label>
+                <input type="number" min="0" max="23" name="pickup_hour"><br> 
+
+                <label for="pickup_minute">Pickup Time (Minute: 0 - 59):</label>
+                <input type="number" min="0" max="59" name="pickup_minute"><br> 
+
+                <label for="pickup_second">Pickup Time (Second: 0 - 59):</label>
+                <input type="number" min="0" max="59" name="pickup_second"><br> 
+
+                <button type="submit">Predict Delivery Time</button>
+
+            </form>
+        </div>
+        <img src="{% static 'mainsite/images/machine_learning.png' %}" alt="">    
+      
+    </section>
+    <footer id = "footer-container" >
+
+        <div class = "footer-grid1">
+            <span><a href="https://www.linkedin.com/in/adedayo-okubanjo-6967b356/" class = "footer-grid1-2">Adedayo Okubanjo</a></span>             
+            <span class = "footer-grid1-3">|</span> 
+            <span class = "footer-grid1-1"><a href="mailto:dayookubanjo@yahoo.com">dayookubanjo@yahoo.com</a></span>
+                
+        </div>
+
+    </footer>
+</body>
+</html>
