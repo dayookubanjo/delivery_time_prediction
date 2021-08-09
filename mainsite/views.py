@@ -38,12 +38,12 @@ def predict(request):
         test_array = np.array([[pickup_monthday,pickup_weekday,temperature,precipitation,pickup_latitude,pickup_longitude,destination_latitude,destination_longitude,pickup_hour,pickup_minute,pickup_second]])
 
         
-        X_SC = pickle.load(open('static/mainsite/x_scaler.sav','rb'))
+        X_SC = pickle.load(open('delivery_time_pred_ml/x_scaler.sav','rb'))
         X_SC.clip = False
         test_array = X_SC.transform(test_array, )
-        RFR = pickle.load(open('static/mainsite/RFR.sav','rb'))
+        RFR = pickle.load(open('delivery_time_pred_ml/RFR.sav','rb'))
         y_pred = RFR.predict(test_array)
-        SC = pickle.load(open('static/mainsite/scaler.sav','rb'))
+        SC = pickle.load(open('delivery_time_pred_ml/scaler.sav','rb'))
         y_pred = SC.inverse_transform(y_pred.reshape(-1, 1) )
         prediction = round(y_pred[0,0] , 2)
 
